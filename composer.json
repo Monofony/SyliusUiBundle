@@ -1,5 +1,5 @@
 {
-    "name": "sylius/ui-bundle",
+    "name": "monofony/ui-bundle",
     "type": "symfony-bundle",
     "description": "Generic UI bundle for Sylius eCommerce components.",
     "keywords": [
