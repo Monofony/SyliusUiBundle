@@ -1,5 +1,5 @@
 {
-    "name": "sylius/ui-bundle",
+    "name": "monofony/ui-bundle",
     "type": "symfony-bundle",
     "description": "Generic UI bundle for Sylius eCommerce components.",
     "keywords": [
@@ -36,7 +36,6 @@
         "sylius/grid-bundle": "^1.8",
         "symfony/config": "^4.4 || ^5.1",
         "symfony/framework-bundle": "^4.4 || ^5.1",
-        "symfony/security": "^4.4 || ^5.1",
         "symfony/security-bundle": "^4.4 || ^5.1",
         "symfony/templating": "^4.4 || ^5.1",
         "zendframework/zend-stdlib": "^3.2"
