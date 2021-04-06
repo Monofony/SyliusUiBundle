@@ -15,7 +15,7 @@ namespace Sylius\Bundle\UiBundle\Menu\Event;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Symfony\Contracts\EventDispatcher\Event;
+use SyliusLabs\Polyfill\Symfony\EventDispatcher\Event;
 
 class MenuBuilderEvent extends Event
 {
