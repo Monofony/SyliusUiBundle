@@ -28,8 +28,7 @@ final class DebugTemplateEventCommand extends Command
 {
     protected static $defaultName = 'sylius:debug:template-event';
 
-    /** @var TemplateBlockRegistryInterface */
-    private $templateBlockRegistry;
+    private TemplateBlockRegistryInterface $templateBlockRegistry;
 
     public function __construct(TemplateBlockRegistryInterface $templateBlockRegistry)
     {
@@ -64,14 +63,12 @@ final class DebugTemplateEventCommand extends Command
         $io->table(
             ['Block name', 'Template', 'Priority', 'Enabled'],
             array_map(
-                static function (TemplateBlock $templateBlock): array {
-                    return [
-                        $templateBlock->getName(),
-                        $templateBlock->getTemplate(),
-                        $templateBlock->getPriority(),
-                        $templateBlock->isEnabled() ? 'TRUE' : 'FALSE',
-                    ];
-                },
+                static fn(TemplateBlock $templateBlock): array => [
+                    $templateBlock->getName(),
+                    $templateBlock->getTemplate(),
+                    $templateBlock->getPriority(),
+                    $templateBlock->isEnabled() ? 'TRUE' : 'FALSE',
+                ],
                 $this->templateBlockRegistry->all()[$eventName] ?? []
             )
         );
