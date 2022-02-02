@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Sylius\Bundle\UiBundle\Controller;
 
 use Sylius\Bundle\UiBundle\Form\Type\SecurityLoginType;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,25 +22,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 
 final class SecurityController
 {
-    /** @var AuthenticationUtils */
-    private $authenticationUtils;
+    private AuthenticationUtils $authenticationUtils;
 
-    /** @var FormFactoryInterface */
-    private $formFactory;
+    private FormFactoryInterface $formFactory;
 
     /** @var EngineInterface|Environment */
     private $templatingEngine;
 
-    /** @var AuthorizationCheckerInterface */
-    private $authorizationChecker;
+    private AuthorizationCheckerInterface $authorizationChecker;
 
-    /** @var RouterInterface */
-    private $router;
+    private RouterInterface $router;
 
     /**
      * @param EngineInterface|Environment $templatingEngine
